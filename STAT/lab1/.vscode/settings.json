@@ -1,0 +1,15 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none",
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+    "editor.formatOnSave": false
+    },
+    "[javascriptreact]": {
+    "editor.formatOnSave": false
+},
+
+}

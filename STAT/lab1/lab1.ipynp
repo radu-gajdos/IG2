@@ -1,0 +1,56 @@
+import random
+from random import sample
+import math
+from math import factorial, perm, comb
+import itertools
+from itertools import permutations, combinations
+# help("random.sample")
+# help("math.perm")
+# help("itertools.permutations")
+print(perm(4,4))
+print(perm(4,2))
+#help("math.comb")
+#2.a Man erstelle eine Liste mit den Permutationen von ABC.
+print(list(permutations("ABC")))
+#2.b Welches ist die gesamte Anzahl der Permutationen von ABC? (3 de cate 3)
+print(perm(3,3))
+#2.c Man generiere eine zuf¨allige Permutation von MATHE.
+print(sample("MATHE", len("MATHE")))
+#2.d Man generiere eine zuf¨allige Variation mit 3 Buchstaben aus dem String MATHE.
+print(sample("MATHE", 3))
+#2.e Man generiere alle Variationen (d.h. Anordnungen ohneWiederholung, mit Ber¨ucksichtigung der Reihenfolge)
+#mit 3 Buchstaben aus dem String MATHE (d.h. alle Variationen je 3 Buchstaben aus dem String MATHE).
+print(list(permutations("MATHE",3)))
+#2.f Welches ist die gesamte Anzahl der Variationen je 3 Buchstaben von ABC?
+print(perm(3,3))
+#2.g
+print(list(combinations("MATHE",3)))
+#2.i
+print(comb(3,3))
+
+#pg2
+import more_itertools
+from more_itertools import distinct_permutations
+M=list(distinct_permutations("AABB"))
+print(M)
+print("Anzahl Permutationen von AABB mit Wiederholung:",len(M))
+i=0
+for p in distinct_permutations("1112"):
+    print("".join(p))
+    i+=1
+print("Anzahl Permutationen von 1112 mit Wiederholung:",i)
+
+import itertools
+from itertools import combinations_with_replacement
+print("Alle Kombinationen von ABC je 2, mit Wiederholung")
+k=list(combinations_with_replacement("ABC",2))
+print(k)
+print("Anzahl Kombinationen von ABC je 2 mit Wiederholung:",len(k))
+
+#UB
+
+l = list(combinations_with_replacement([1,2,3,4],6))
+print(len(l))
+n=4
+k=6
+print(comb(n+k-1,k))
