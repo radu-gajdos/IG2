@@ -1,4 +1,4 @@
-USE auf3_test;
+USE auf3;
 
 --ModifyColumnType 
 DROP PROCEDURE ModifyColumnType;
@@ -227,7 +227,7 @@ GO
 --RollbackToOldVersion procedure
 DROP PROCEDURE RollbackToOldVersion;
 
-use auf3_test;
+use auf3;
 GO
 CREATE PROCEDURE RollbackToOldVersion
     @targetVersion INT
@@ -294,7 +294,7 @@ END;
 
 --RollbackToNewVersion procedure
 DROP PROCEDURE RollbackToNewVersion;
-USE auf3_test;
+USE auf3;
 GO
 CREATE PROCEDURE RollbackToNewVersion
     @targetVersion INT

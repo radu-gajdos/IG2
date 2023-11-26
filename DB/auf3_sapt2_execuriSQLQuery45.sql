@@ -1,5 +1,5 @@
 --use Lab1;
-use auf3_test;
+use auf3;
 CREATE TABLE aktuallVersion (
     versionNumber INT DEFAULT 0 PRIMARY KEY
 );
@@ -14,6 +14,9 @@ CREATE TABLE versions (
     Param4 VARCHAR(MAX) DEFAULT NULL,
     Param5 VARCHAR(MAX) DEFAULT NULL,
 );
+
+SELECT * from aktuallVersion;
+SELECT * from versions;
 
 EXEC CreateNewTable 'T1', 'id INT PRIMARY KEY, title VARCHAR(50)'
 EXEC CreateNewTable 'T2', 'id INT PRIMARY KEY, title VARCHAR(50)'
@@ -48,10 +51,10 @@ EXEC universalRollbackToVersion 1;
 EXEC universalRollbackToVersion 8;
 
 
-use auf3_test;
-drop table T1
+use auf3;
 drop table T2
 drop table T3
-use Lab1;
+drop table T1
+use auf3;
 drop table versions
 drop table aktuallVersion
