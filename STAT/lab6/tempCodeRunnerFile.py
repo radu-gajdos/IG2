@@ -1,0 +1,1 @@
+real_roots_probability = np.mean(B_values**2 - 4*1*C_values >= 0)

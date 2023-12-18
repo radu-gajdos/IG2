@@ -1,27 +1,41 @@
-use auf4;
 
-DROP VIEW UserFaraCnp;
-DROP FUNCTION GetDateFilteredData;
 
-GO
-CREATE VIEW UserFaraCnp AS
-SELECT id, username AS 'Nume de utilizator', geburtsDatum AS 'Data nasterii'
-FROM Users;
+CREATE TABLE Companies (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    companyName NVARCHAR(255),
+);
 GO
 
-CREATE FUNCTION GetDateFilteredData (@filterDate DATE)
+INSERT INTO Companies VALUES ('Facebook')
+INSERT INTO Companies VALUES ('Google')
+
+SELECT * FROM Companies
+
+DROP FUNCTION filterByDate
+
+GO
+
+CREATE FUNCTION filterByDate(@dateEmployed DATE)
 RETURNS TABLE
 AS
-RETURN
-(
-    SELECT id, username AS 'Nume de utilizator', geburtsDatum AS 'Data nasterii', cnp
-	FROM Users
-    WHERE geburtsDatum >= @filterDate
+RETURN (
+    SELECT Users.id
+    FROM Users
+    WHERE dateEmployed >= @dateEmployed
 );
-Go
 
-SELECT * FROM Users
+GO
+CREATE VIEW usernameCompanyName AS
+SELECT
+    Users.id,
+    Users.username,
+    Users.dateEmployed,
+	companies.companyName
+FROM Users
+JOIN companies on users.companyId = companies.id
+GO
 
-SELECT V.*, F.*
-FROM UserFaraCnp V
-LEFT OUTER JOIN GetDateFilteredData('2002-01-01') F ON V.id = F.id;
+GO
+SELECT usernameCompanyName.username, usernameCompanyName.dateEmployed, usernameCompanyName.companyName
+FROM usernameCompanyName
+JOIN filterByDate('2001-01-01') ON usernameCompanyName.id = filterByDate.id;
