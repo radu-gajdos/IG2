@@ -1,0 +1,15 @@
+C:\Users\Radu\Desktop\IG2\MAP\semC\bin\Debug\net8.0\semC.exe
+C:\Users\Radu\Desktop\IG2\MAP\semC\bin\Debug\net8.0\semC.deps.json
+C:\Users\Radu\Desktop\IG2\MAP\semC\bin\Debug\net8.0\semC.runtimeconfig.json
+C:\Users\Radu\Desktop\IG2\MAP\semC\bin\Debug\net8.0\semC.dll
+C:\Users\Radu\Desktop\IG2\MAP\semC\bin\Debug\net8.0\semC.pdb
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\semC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\semC.AssemblyInfoInputs.cache
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\semC.AssemblyInfo.cs
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\semC.csproj.CoreCompileInputs.cache
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\semC.sourcelink.json
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\semC.dll
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\refint\semC.dll
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\semC.pdb
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\semC.genruntimeconfig.cache
+C:\Users\Radu\Desktop\IG2\MAP\semC\obj\Debug\net8.0\ref\semC.dll
