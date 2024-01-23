@@ -4,7 +4,7 @@ from matplotlib.pyplot import bar, show, hist, grid, legend, xticks
 
 N=1000
 x=[0 ,1 ,2 ,5]
-P=[0.25 ,0.1 ,0.3 ,0.2]
+P=[0.4 ,0.1 ,0.3 ,0.2]
 rng = numpy.random.default_rng()
 r=rng.choice(x, size=N , replace=True, p=P)
 

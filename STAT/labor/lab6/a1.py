@@ -1,49 +1,34 @@
 import numpy as np
-import random
+import matplotlib.pyplot as plt
 
-X = np.array([4, 5, 6, 7, 8, 9, 10])
-P = np.array([0.05, 0.1, 0.1, 0.35, 0.2, 0.1, 0.1])
+# Daten aus dem Vektor X
+X = np.array([299, 297, 303, 299, 301, 300, 297, 302, 303, 300, 299, 301, 302, 301, 299, 300, 297, 300, 300, 296, 303, 295, 295, 297])
+N = len(X)
 
-N=10000
+mean_X = np.mean(X)
+var_X = np.var(X, ddof=1)
 
-D = np.array(random.choices(X, weights=P, k=N))
-
-#a
-mean_X = np.mean(D)
-var_X = np.var(D)
-
-P_X_mme_7 = np.sum(D <= 7) / len(D)
-P_X_mm_4 = np.sum(D > 4) / len(D)
+P_X_lt_301 = np.sum(X < 301) / N
 
 print("\nSimulierte Werte:")
 print("E(X):", mean_X)
 print("V(X):", var_X)
-print("P(X <= 7):", P_X_mme_7)
-print("P(X > 4):", P_X_mm_4)
+print("P(X < 301):", P_X_lt_301)
 
-#b
-mean_th = np.sum(X * P)
-var_th = np.sum(X**2 * P) - mean_th**2
-P_th_leq_7 = np.sum(P[X <= 7])
-P_th_gt_4 = np.sum(P[X > 4])
+d, c = np.unique(X, return_counts=True)
 
-print("\nTheoretische Werte:")
-print("Erwartungswert E(X):", mean_th)
-print("Varianz V(X):", var_th)
-print("P(X <= 7):", P_th_leq_7)
-print("P(X > 4):", P_th_gt_4)
-
-#c
-import matplotlib.pyplot as plt
-
-d,c=np.unique(D,return_counts=True)
-plt.bar(d,c/N,width=0.8, edgecolor='black', color='blue')
-plt.title('relativen Häufigkeiten')
+# Histogramm der relativen Häufigkeiten
+plt.figure(figsize=(8, 4))
+plt.bar(d, c / N, width=0.8, edgecolor='black', color='blue')
+plt.title('Histogramm der relativen Häufigkeiten')
+plt.xlabel('Wert')
+plt.ylabel('Relative Häufigkeit')
 plt.show()
 
-
-plt.bar(d,c,width=0.8, edgecolor='black', color='red')
-plt.title('absolute Häufigkeiten')
+# Histogramm der absoluten Häufigkeiten
+plt.figure(figsize=(8, 4))
+plt.bar(d, c, width=0.8, edgecolor='black', color='red')
+plt.title('Histogramm der absoluten Häufigkeiten')
+plt.xlabel('Wert')
+plt.ylabel('Absolute Häufigkeit')
 plt.show()
-
-

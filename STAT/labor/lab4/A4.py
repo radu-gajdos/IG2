@@ -5,8 +5,10 @@ from matplotlib.pyplot import bar, show, hist, grid, legend, xticks
 N = 1000
 n = 7
 p = 0.4
-X = binom.rvs(n, p, size=N)
+X = binom.rvs(n-1, p, size=N)
 z, count = numpy.unique(X, return_counts=True)
+print(z)
+print(count)
 
 theoretical_probabilities = {k: binom.pmf(k, n, p) for k in range(0, n + 1)}
 
@@ -18,7 +20,7 @@ for k, v in theoretical_probabilities.items():
 print("Relativ hochstens 3 Rechner", anzahlMaxDrei / N)
 print("P( X <=", 3, f")={tanzahlMaxDrei:.6f}")
 
-anzahlMinVier = count[4] + count[5] + count[6] + count[7]
+anzahlMinVier = count[4] + count[5] + count[6]
 tanzahlMinVier = 0
 for k, v in theoretical_probabilities.items():
     if k >= 4:

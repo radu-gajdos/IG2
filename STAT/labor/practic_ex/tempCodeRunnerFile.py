@@ -1,0 +1,1 @@
+simulated_values_X = np.random.binomial(4, 1/4, N)
