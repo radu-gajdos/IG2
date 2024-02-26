@@ -1,0 +1,2 @@
+Animal{name='Elephant', species='Loxodonta africana', age=10, enclosure_type='Enclosure', health_status='Sick'}
+Animal{name='Penguin', species='Spheniscus demersus', age=2, enclosure_type='Enclosure', health_status='Sick'}
